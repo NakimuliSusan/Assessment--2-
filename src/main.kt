@@ -22,29 +22,32 @@ fun main () {
 }
 open class  CurrentAccount (var account_number:String,account_name:String,var balance:Double) {
     open fun deposit (amount:Double) {
-      println( balance+amount)
+       balance+=amount
+        println(balance)
 
 
     }
     open fun withdraw(amount: Double){
 
-        println( balance-amount)
+         balance-=amount
+        println(balance)
     }
     fun details () {
-        println("Account number $account_number with balance $balance")
+        println("Account number $account_number with balance $balance ")
     }
 
 }
 class SavingsAccount (account_number: String,account_name: String,balance: Double):CurrentAccount(account_number,account_name,balance) {
     override fun deposit(amount: Double) {
 //        super.deposit(amount)
-        var bal = amount+ balance
-        println(bal)
+        balance+=amount
+        println(balance)
 
     }
 
     override fun withdraw(amount: Double) {
-         balance-amount
+         balance-=amount
+        println(balance)
     }
 
     fun withdraw (withdrawals:Int) {
